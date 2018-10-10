@@ -5,26 +5,37 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private Button buttonActivity, buttonFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Bundle bundle_login = getIntent().getExtras();
+        TextView nama = (TextView) findViewById(R.id.pengguna);
+        nama.setText(bundle_login.getCharSequence("nama"));
 
-        buttonActivity = (Button) findViewById(R.id.buttonActivity);
-        buttonFragment = (Button) findViewById(R.id.buttonFragment);
+    }
 
+    public void adds(View view) {
 
-        buttonActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
-            }
-        });
+    }
+
+    public void list(View view) {
+    }
+
+    public void kefrag(View view) {
+
+        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+        startActivity(intent);
+    }
+
+    public void activity(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        startActivity(intent);
     }
 }
 

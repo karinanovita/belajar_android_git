@@ -18,7 +18,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        intances = PreferencesHelper.getIntances(getApplicationContext());
+        intances = PreferencesHelper.getInstance(getApplicationContext());
         int splashInterval = 10;
         new Handler () .postDelayed(new Runnable() {
             @Override
